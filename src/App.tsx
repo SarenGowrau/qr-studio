@@ -53,7 +53,6 @@ function App() {
     const validationError = validateQRInput(
       qrType,
       text,
-      wifiPassword
     );
 
     if (validationError) {
@@ -75,7 +74,8 @@ function App() {
     QRCode.toDataURL(qrData, {
       width: qrSize,
       margin: qrMargin,
-      errorCorrectionLevel: errorCorrection,
+      errorCorrectionLevel:
+  errorCorrection as "L" | "M" | "Q" | "H",
       color: {
         dark: foregroundColor,
         light: backgroundColor,

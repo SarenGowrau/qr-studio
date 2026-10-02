@@ -3,7 +3,7 @@ import type { QRType } from "../types/qr";
 export function validateQRInput(
   type: QRType,
   value: string,
-  wifiPassword: string
+  
 ): string {
   if (!value.trim()) {
     return "Please enter the required information.";
