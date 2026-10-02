@@ -1,0 +1,1 @@
+export type QRType = "url" | "text" | "email" | "phone" | "wifi";
