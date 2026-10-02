@@ -1,75 +1,206 @@
-# React + TypeScript + Vite
+# QR Studio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Beautiful QR codes, made simple.
 
-Currently, two official plugins are available:
+QR Studio is a modern, responsive QR code generator and designer built with React and TypeScript. It supports multiple QR formats, live customization, presets, validation, scanability warnings, PNG downloads, and recent QR code history.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Demo
 
-## React Compiler
+https://qr-studio-seven-fawn.vercel.app/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+- Generate QR codes in real time
+- URL QR codes
+- Plain text QR codes
+- Email QR codes
+- Phone number QR codes
+- Wi-Fi QR codes
+- Customize foreground and background colors
+- Adjust QR code size
+- Adjust margin
+- Choose error correction level
+- Predefined visual presets
+- Modify presets after applying them
+- Input validation with contextual error messages
+- Scanability warnings for risky customizations
+- Download QR codes as PNG
+- Save recent QR codes using LocalStorage
+- Reuse previous QR codes
+- Clear recent QR history
+- Responsive desktop and mobile interface
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📱 Supported QR Types
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+| Type | Description |
+|---|---|
+| URL | Generate a QR code for a website or URL |
+| Text | Encode plain text |
+| Email | Generate a `mailto:` QR code |
+| Phone | Generate a `tel:` QR code |
+| Wi-Fi | Generate a Wi-Fi network QR code with security options |
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🎨 Customization
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+QR Studio provides live customization controls for:
 
+- QR code size
+- Foreground color
+- Background color
+- Error correction level
+- Margin / quiet zone
+
+Changes are reflected immediately in the QR preview.
+
+## 🎨 Presets
+
+QR Studio includes predefined visual presets such as:
+
+- Classic
+- Ocean
+- Midnight
+- Soft
+
+Presets automatically apply a combination of colors, error correction, and margin settings. Users can continue modifying the settings after selecting a preset.
+
+## ⚠️ Validation & Scanability
+
+QR Studio validates user input according to the selected QR type.
+
+Examples include:
+
+- Invalid URL detection
+- Invalid email detection
+- Invalid phone number detection
+- Empty input detection
+
+The application also provides scanability warnings when customization settings may make a QR code harder to scan, such as:
+
+- Low foreground/background contrast
+- Very small QR size
+- Insufficient margin
+
+These warnings help users maintain practical QR code readability while still allowing customization.
+
+## 🕘 Recent QR Codes
+
+Recently generated QR codes are stored locally using the browser's `localStorage`.
+
+Users can:
+
+- Reuse previous QR codes
+- View recent QR configurations
+- Keep recent QR codes after refreshing the page
+- Clear their recent QR history
+
+No backend or user account is required.
+
+## 📥 Download
+
+Generated QR codes can be downloaded as PNG files using the same configuration displayed in the live preview.
+
+## 🛠️ Tech Stack
+
+- React
+- TypeScript
+- Vite
+- CSS
+- `qrcode`
+- Browser LocalStorage
+
+## 📂 Project Structure
+
+```text
+qr-studio/
+├── public/
+├── src/
+│   ├── data/
+│   │   └── presets.ts
+│   ├── types/
+│   │   ├── qr.ts
+│   │   └── recentQR.ts
+│   ├── utils/
+│   │   ├── qrData.ts
+│   │   ├── readability.ts
+│   │   └── validation.ts
+│   ├── App.tsx
+│   ├── index.css
+│   └── main.tsx
+├── .gitignore
+├── index.html
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## ▶️ Run Locally
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Clone the repository:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/SarenGowrau/qr-studio.git
+```
 
+Move into the project directory:
+
+```bash
+cd qr-studio
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+## 🧪 Testing
+
+The application was tested for:
+
+- URL generation
+- Plain text generation
+- Email generation
+- Phone number generation
+- Wi-Fi generation
+- Invalid and empty inputs
+- Preset application
+- Custom colors
+- Size changes
+- Margin changes
+- Error correction changes
+- Scanability warnings
+- PNG downloads
+- Recent QR persistence
+- Refresh persistence
+- Clearing recent QR codes
+- Responsive layouts
+
+## 📸 Screenshots
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+## 📜 Project Context
+
+QR Studio was created as a frontend project for the **GDG on Campus SRM Technical Domain Recruitment 2026–27**.
+
+The project focuses on creating a polished, responsive QR code generation and customization experience using modern frontend technologies.
+
+## 👤 Author
+
+**Saren Gowrau**
+
+GitHub: https://github.com/SarenGowrau/qr-studio
 ```
