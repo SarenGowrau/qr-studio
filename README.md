@@ -190,7 +190,11 @@ The application was tested for:
 
 ## 📸 Screenshots
 
-\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+<img width="1888" height="855" alt="image" src="https://github.com/user-attachments/assets/fd027fca-c578-4ace-adf7-dd3f7b0efff8" />
+<img width="1884" height="909" alt="image" src="https://github.com/user-attachments/assets/6745c73a-f0f6-4089-a8fa-81b4d8da753a" />
+<img width="1897" height="864" alt="image" src="https://github.com/user-attachments/assets/fbebd2ca-8fbe-403f-ae51-74e88a01da6c" />
+<img width="1896" height="865" alt="image" src="https://github.com/user-attachments/assets/28508bd7-b816-44da-b6f2-70833d3739ef" />
+
 
 ## 📜 Project Context
 
